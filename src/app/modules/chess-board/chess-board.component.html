@@ -1,0 +1,42 @@
+<div class="chess-board" [ngClass]="{'rotated': flipMode}">
+    <div *ngFor="let row of chessBoardView; let x = index" class="row">
+        <div *ngFor="let piece of row; let y = index" class="square" [ngClass]="{'dark': isSquareDark(x, y), 
+            'light':!isSquareDark(x, y),
+            'selected-square': isSquareSelected(x, y),
+            'last-move': isSquareLastMove(x, y),
+            'king-in-check': isSquareChecked(x, y),
+            'promotion-square': isSquarePromotionSquare(x, y)
+
+
+        }
+            
+            " (click)="move(x, y)">
+
+            <div [ngClass]="{'safe-square': isSquareSafeForSelectedPiece(x, y)}"></div>
+
+            <img *ngIf="piece" [src]="pieceImagePaths[piece]" [alt]="piece" class="piece"
+                [ngClass]="{'rotated': flipMode}">
+        </div>
+    </div>
+
+
+</div>
+
+<button (click)="flipBoard()">Flip</button>
+
+<h2 *ngIf="gameOverMessage" class="game-over-message">
+    {{gameOverMessage}}
+</h2>
+
+<div *ngIf="isPromotionActive" class="promotion-dialog">
+    <img *ngFor="let piece of promotionPieces()" [src]="pieceImagePaths[piece]" (click)="promotePiece(piece)">
+
+    <span class="close-promotion-dialog" (click)="closePawnPromotionDialog()">
+        &times;
+    </span>
+</div>
+
+<app-move-list [moveList]="moveList" [gameHistoryPointer]="gameHistoryPointer" [gameHistoryLength]="gameHistory.length"
+    (showPreviousPositionEvent)="showPreviousPosition($event)">
+
+</app-move-list>

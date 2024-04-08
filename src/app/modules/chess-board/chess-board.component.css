@@ -1,0 +1,88 @@
+.chess-board {
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    width: 480px;
+    height: 480px;
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+    border: 1px solid white;
+    background-color: white;
+}
+
+
+.game-over-message {
+    color: white;
+}
+
+.promotion-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+}
+
+.promotion-dialog img {
+    height: 70px;
+    cursor: pointer;
+}
+
+.close-promotion-dialog {
+    font-size: 45px;
+    cursor: pointer;
+    color: white;
+}
+
+.dark {
+    background-color: #779AAF
+}
+
+.light {
+    background-color: #D9E4E8;
+}
+
+.piece {
+    width: 50px;
+}
+
+.selected-square {
+    box-shadow: inset rgba(60, 70, 85, 0.5) 0px 0px 40px 0px, inset rgba(60, 70, 85, 0.5) 0px 0px 40px 0px, inset rgba(0, 0, 0, 1) 0px 0px 36px -24px;
+}
+
+.safe-square {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: #bbb;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.king-in-check {
+    box-shadow: inset rgb(179, 21, 0) 0px 0px 40px 0px, inset rgb(163, 11, 0) 0px 0px 40px 0px, inset rgba(0, 0, 0, 1) 0px 0px 36px -24px;
+}
+
+.last-move {
+    box-shadow: inset rgb(6, 179, 0) 0px 0px 40px 0px, inset rgb(6, 179, 0)0px 0px 40px 0px, inset rgba(0, 0, 0, 1) 0px 0px 36px -24px;
+}
+
+.promotion-square {
+    box-shadow: inset rgb(0, 98, 150) 0px 0px 40px 0px, inset rgb(0, 98, 150) 0px 0px 40px 0px, inset rgba(0, 0, 0, 1) 0px 0px 36px -24px;
+}

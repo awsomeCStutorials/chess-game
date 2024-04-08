@@ -1,0 +1,39 @@
+.move-list {
+    max-height: 100px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.move-list::-webkit-scrollbar {
+    display: none;
+}
+
+.move-list {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.row {
+    width: 250px;
+    display: flex;
+    color: white
+}
+
+.move-number {
+    width: 50px;
+}
+
+.current-move {
+    background-color: rgb(0, 143, 168);
+}
+
+.move {
+    cursor: pointer;
+    width: 100px;
+}
+
+.move:hover {
+    background-color: rgb(0, 143, 168);
+    opacity: 0.7
+}
