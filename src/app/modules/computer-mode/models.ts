@@ -15,7 +15,7 @@ export type ChessMove = {
 
 export type StockfishResponse = {
     success: boolean;
-    evaulatuion: number | null;
+    evaluation: number | null;
     mate: number | null;
     bestmove: string;
     continuation: string;
